@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Love ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  background:linear-gradient(180deg,#fff7f3,#fdeae4);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  font-family:'Dancing Script',cursive;
+}
+
+.book{
+  width:340px;
+  height:480px;
+  position:relative;
+  perspective:1200px;
+}
+
+.page{
+  width:100%;
+  height:100%;
+  position:absolute;
+  transform-style:preserve-3d;
+  transform-origin:left;
+  transition:transform 1s;
+  cursor:pointer;
+}
+
+/* Proper stacking order */
+.page:nth-child(1){ z-index:6; }
+.page:nth-child(2){ z-index:5; }
+.page:nth-child(3){ z-index:4; }
+.page:nth-child(4){ z-index:3; }
+.page:nth-child(5){ z-index:2; }
+.page:nth-child(6){ z-index:1; }
+
+.page.flipped{
+  transform:rotateY(-180deg);
+}
+
+.side{
+  position:absolute;
+  width:100%;
+  height:100%;
+  backface-visibility:hidden;
+  background:#fffdfb;
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:28px;
+  box-sizing:border-box;
+  color:#5b4a42;
+  font-size:20px;
+  line-height:1.6;
+}
+
+.back{
+  transform:rotateY(180deg);
+}
+
+.intro{
+  font-size:26px;
+}
+
+.final{
+  font-size:20px;
+  flex-direction:column;
+  gap:18px;
+}
+
+.gif{
+  margin-top:20px;
+  width:90%;
+  max-width:240px;
+  border-radius:12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="book" id="book">
+
+<!-- Intro -->
+<div class="page">
+  <div class="side intro">
+    Hey my love… ❤️<br><br>
+    Tap slowly.<br>
+    This is me reaching for you gently.
+  </div>
+  <div class="side back"></div>
+</div>
+
+<!-- Page 1 -->
+<div class="page">
+  <div class="side">
+    I know something I did made your heart feel a little heavy today, tuku.<br><br>
+    And I’ve been thinking about it quietly, wishing I could sit beside you and just make it softer again.
+  </div>
+  <div class="side back"></div>
+</div>
+
+<!-- Page 2 -->
+<div class="page">
+  <div class="side">
+    I don’t like the thought of you feeling hurt, especially when it came from me.<br><br>
+    That was never where my heart was. But I understand that feelings don’t follow intention — they follow impact.<br><br>
+    And yours matter to me.
+  </div>
+  <div class="side back"></div>
+</div>
+
+<!-- Page 3 -->
+<div class="page">
+  <div class="side">
+    You are someone I’m deeply grateful for.<br><br>
+    Your love, your patience, your presence in my life — none of it feels ordinary to me.<br><br>
+    You’re someone I cherish, not someone I ever want to take lightly.
+  </div>
+  <div class="side back"></div>
+</div>
+
+<!-- Page 4 -->
+<div class="page">
+  <div class="side">
+    We are bigger than small moments.<br>
+    Stronger than misunderstandings.<br><br>
+    And safe enough to always come back to each other.
+  </div>
+  <div class="side back"></div>
+</div>
+
+<!-- Page 5 -->
+<div class="page">
+  <div class="side">
+    So if your heart felt even a little off today…<br><br>
+    I’m here, gently saying:<br><br>
+    I’m sorry, my love. 🥺
+  </div>
+  <div class="side back"></div>
+</div>
+
+<!-- Final Page -->
+<div class="page">
+  <div class="side final">
+    Being loved by you is one of the greatest things in my life.<br><br>
+    Thank you for being my heart’s home, my peace, my wife. ❤️
+    <img src="forgive.gif" class="gif">
+  </div>
+  <div class="side back"></div>
+</div>
+
+</div>
+
+<script>
+const pages = document.querySelectorAll(".page");
+let current = 0;
+
+document.getElementById("book").addEventListener("click",()=>{
+  if(current < pages.length){
+    pages[current].classList.add("flipped");
+    current++;
+  }
+});
+</script>
+
+</body>
+</html>
